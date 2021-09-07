@@ -33,7 +33,9 @@ export async function getServerSideProps(context) {
     `https://api.themoviedb.org/3${
       requests[genre]?.url || request.fetchTrending.url
     }`
-  ).then((res) => res.json())
+  )
+    .then((res) => res.json())
+    .catch((err) => console.log('Connection failed!'))
 
   return {
     props: {
