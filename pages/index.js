@@ -35,7 +35,7 @@ export async function getServerSideProps(context) {
     }`
   )
     .then((res) => res.json())
-    .catch((err) => console.log('Connection failed!'))
+    .catch((err) => console.log('Connection failed!' + err))
 
   return {
     props: {
